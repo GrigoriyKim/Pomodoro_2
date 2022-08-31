@@ -21,17 +21,17 @@ public class PomodoroTimer {
             switch (cmd[i]) {
                 case "--help" -> {
                     System.out.println(
-                            "\n\nPomodoro - сделай свое время более эффективным\n");
+                            "\n\nPomodoro - Г±Г¤ГҐГ«Г Г© Г±ГўГ®ГҐ ГўГ°ГҐГ¬Гї ГЎГ®Г«ГҐГҐ ГЅГґГґГҐГЄГІГЁГўГ­Г»Г¬\n");
                     System.out.println(
-                            "	-w <time>: время работы, сколько хочешь работать.\n");
+                            "	-w <time>: ГўГ°ГҐГ¬Гї Г°Г ГЎГ®ГІГ», Г±ГЄГ®Г«ГјГЄГ® ГµГ®Г·ГҐГёГј Г°Г ГЎГ®ГІГ ГІГј.\n");
                     System.out.println(
-                            "	-b <time>: время отдыха, сколько хочешь отдыхать.\n");
+                            "	-b <time>: ГўГ°ГҐГ¬Гї Г®ГІГ¤Г»ГµГ , Г±ГЄГ®Г«ГјГЄГ® ГµГ®Г·ГҐГёГј Г®ГІГ¤Г»ГµГ ГІГј.\n");
                     System.out.println(
-                            "	-count <count>: количество итераций.\n");
+                            "	-count <count>: ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® ГЁГІГҐГ°Г Г¶ГЁГ©.\n");
                     System.out.println(
-                            "	-m <multiplier>: количество итераций.\n");
+                            "	-m <multiplier>: ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® ГЁГІГҐГ°Г Г¶ГЁГ©.\n");
                     System.out.println(
-                            "	--help: меню помощи.\n");
+                            "	--help: Г¬ГҐГ­Гѕ ГЇГ®Г¬Г®Г№ГЁ.\n");
                     help = 1;
                 }
                 case "-w" -> work = Integer.parseInt(cmd[++i]);
@@ -44,11 +44,11 @@ public class PomodoroTimer {
             long startTime = System.currentTimeMillis();
             for (int i = 1; i <= count; i++) {
                 timer(work, breake, sizebreak, sizework);
-                //work *= multiplier;
-                //breake *= multiplier;
+                work *= multiplier;
+                breake *= multiplier;
             }
             long endTime = System.currentTimeMillis();
-            System.out.println("Pomodor таймер истек: " + (endTime-startTime)/(1000 * 60)+ " min");
+            System.out.println("Pomodor ГІГ Г©Г¬ГҐГ° ГЁГ±ГІГҐГЄ: " + (endTime-startTime)/(1000 * 60)+ " min");
         }
 
     }
